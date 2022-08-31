@@ -11,7 +11,10 @@ new Vue({
     el:'#app',
     render: h => h(FrontEnd),
     router: new VueRouter({
-        routes
-    })
+        routes,
+        
+        // mode history per avere l URL senza #
+        mode:'history'
+    }),
     
 })

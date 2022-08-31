@@ -2024,7 +2024,25 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      name: "",
+      message: ""
+    };
+  },
+  methods: {
+    onFormSubmits: function onFormSubmits(e) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/api/contacts", {
+        name: this.name,
+        message: this.message
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2301,15 +2319,59 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _vm._m(0);
+  return _c("div", [_c("h1", [_vm._v("Pagina Contatti")]), _vm._v(" "), _c("form", {
+    on: {
+      submit: _vm.onFormSubmits
+    }
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.name,
+      expression: "name"
+    }],
+    attrs: {
+      type: "text",
+      placeholder: "Nome"
+    },
+    domProps: {
+      value: _vm.name
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.name = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("br"), _vm._v(" "), _c("textarea", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.message,
+      expression: "message"
+    }],
+    attrs: {
+      cols: "30",
+      rows: "10",
+      placeholder: "Messaggio"
+    },
+    domProps: {
+      value: _vm.message
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.message = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("button", {
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("Invia")])])]);
 };
 
-var staticRenderFns = [function () {
-  var _vm = this,
-      _c = _vm._self._c;
-
-  return _c("div", [_c("h1", [_vm._v("Pagina Contatti")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
@@ -18239,7 +18301,9 @@ new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     return h(_FrontEnd_vue__WEBPACK_IMPORTED_MODULE_1__["default"]);
   },
   router: new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
-    routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"]
+    routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
+    // mode history per avere l URL senza #
+    mode: 'history'
   })
 });
 
