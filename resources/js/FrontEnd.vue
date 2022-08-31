@@ -4,9 +4,11 @@
 
   <div>
     <NavbarComponent></NavbarComponent>
+
     <div class="container">
-      <h2>Lista Post</h2>
-      <PostList></PostList>
+
+      <router-view></router-view>
+      
     </div>
     
     

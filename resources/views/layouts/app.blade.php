@@ -40,7 +40,13 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
+                        <div class="links">
+                            <a href="{{route('admin.posts.index')}}">Post</a>
+                            <a href="{{route('admin.users.index')}}">Utenti</a>
+                            <a href="{{route('admin.index')}}">Home</a>
+
+
+                        </div>
                         <ul class="navbar-nav mr-auto">
 
                         </ul>

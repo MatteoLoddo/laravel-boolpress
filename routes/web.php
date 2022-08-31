@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 // ROUTE PUBBLICHE
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
+
 
 // ROUTE ADMIN
 Route::middleware('auth')
@@ -50,6 +52,9 @@ Route::middleware('auth')
 
 
 
+Route::get('{any?}' , function(){
+    return view('welcome');
+})->where('any' , '.*');
 
 
 

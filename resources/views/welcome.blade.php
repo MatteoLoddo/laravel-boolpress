@@ -11,7 +11,20 @@
     </head>
     <body>
         <div id="app" class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            {{-- content from FrontEnd.vue --}}
+        </div>
+        <script src="{{asset('js/frontend.js')}}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+    {{-- @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
                         <a href="{{ route('admin.index') }}">Admin</a>
@@ -36,14 +49,4 @@
                 @guest
                 <h2>utente NON-LOGGATO</h2>
                 @endguest
-              
-                <div class="links">
-                    <a href="{{route('admin.posts.index')}}">Post</a>
-                    <a href="{{route('admin.users.index')}}">Utenti</a>
-
-                </div>
-            </div>
-        </div>
-        <script src="{{asset('js/frontend.js')}}"></script>
-    </body>
-</html>
+            </div> --}}
